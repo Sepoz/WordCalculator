@@ -1,6 +1,6 @@
-let n = '10';
+let n = '254';
 let b = n.split('');
-let c, d, e;
+let c, d, e, f;
 
 function ten(b) {
     let element = b.length - 1;
@@ -53,7 +53,7 @@ function anotherTen(n) {
     };
 };
 
-function oneh(b) {
+function oneH(b) {
     let element = b.length - 2;
 
     if (b[element] === '2') {
@@ -75,6 +75,31 @@ function oneh(b) {
     };
 };
 
+function oneT(b) {
+    let element = b.length - 3;
+
+
+    if (b[element] === '1') {
+        return f = 'one';
+    } else if (b[element] === '2') {
+        return f = 'two';
+    } else if (b[element] === '3') {
+        return f = 'three';
+    } else if (b[element] === '4') {
+        return f = 'four';
+    } else if (b[element] === '5') {
+        return f = 'five';
+    } else if (b[element] === '6') {
+        return f = 'six';
+    } else if (b[element] === '7') {
+        return f = 'seven';
+    } else if (b[element] === '8') {
+        return f = 'eight';
+    } else if (b[element] === '9') {
+        return f = 'nine';
+    };
+}
+
 function calculator(n, b) {
     let x = Number(n);
 
@@ -85,10 +110,15 @@ function calculator(n, b) {
         anotherTen(n);
         console.log(d);
     } else if (x >= 20 && x < 100) {
-        oneh(b);
+        oneH(b);
         ten(b);
         console.log(`${e}-${c}`);
-    };
+    } else if (x >= 100 && x < 1000) {
+        oneT(b);
+        oneH(b);
+        ten(b);
+        console.log(`${f} hundred ${e}-${c}`);
+    }
 };
 
 calculator(n, b);
